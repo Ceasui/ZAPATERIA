@@ -1,0 +1,111 @@
+.container1 {
+  display: grid; /* Utiliza un diseño de cuadrícula para el contenedor principal. */
+  grid-template-columns: 1fr; /* Define una sola columna para la cuadrícula. */
+  gap: 20px; /* Añade un espacio de 20px entre las filas de la cuadrícula. */
+  max-width: 100%; /* El contenedor ocupará el 100% del ancho disponible. */
+  margin: 0 auto; /* Centra horizontalmente el contenedor. */
+  padding: 20px; /* Agrega un espacio interno de 20px alrededor del contenedor. */
+  }
+  .grib1 {
+  display: grid; /* Usa un diseño de cuadrícula para cada elemento `.grib1`. */
+  align-items: center; /* Centra verticalmente los elementos internos. */
+  grid-template-columns: 2fr 1fr; /* Divide el espacio en dos columnas: 2 partes para el contenido y 1 parte para el texto. */
+  gap: 20px; /* Espaciado de 20px entre las columnas internas. */
+  border: 5px solid rgb(0, 255, 213); /* Borde de color turquesa de 5px de grosor. */
+  border-radius: 10px; /* Bordes redondeados con un radio de 10px. */
+  }
+  .grib1:nth-child(even) {
+  grid-template-columns: 1fr 2fr; /* Cambia el orden de las columnas para los elementos pares. */
+  }
+  .grib1 img {
+  width: 100%; /* La imagen ocupa todo el ancho de su contenedor. */
+  height: 300px; /* Altura fija de 300px para todas las imágenes. */
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor manteniendo la proporción. */
+  border-radius: 10px 0 0 10px; /* Bordes redondeados solo en las esquinas izquierda superior e inferior. */
+  }
+  .grib1:nth-child(even) img {
+  border-radius: 0 10px 10px 0; /* Cambia los bordes redondeados a las esquinas derecha superior e inferior para los elementos pares. */
+  }
+  .texto1 {
+  padding: 20px; /* Agrega un espacio interno de 20px alrededor del texto. */
+  }
+  .texto1 h1 {
+  ~ 13 ~
+  margin-bottom: 10px; /* Añade un espacio de 10px debajo del título. */
+  font-size: 1.5rem; /* Define un tamaño de fuente grande para los títulos. */
+  }
+  .texto1 p {
+  line-height: 1.6; /* Incrementa el espacio entre líneas para mejorar la legibilidad. */
+  }
+  /* Responsive */
+  @media (max-width: 768px) {
+  .grib1, .grib1:nth-child(even) {
+  grid-template-columns: 1fr; /* Cambia a una sola columna para pantallas pequeñas. */
+  }
+  .grib1 img {
+  border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior para las imágenes. */
+  }
+  .grib1:nth-child(even) img {
+  border-radius: 10px 10px 0 0; /* Igual configuración para los elementos pares en pantallas pequeñas. */
+  }
+  }
+  .container2 {
+    max-width: 100%; /* El ancho máximo de la galería ocupa el 100% del contenedor. */
+    margin: 0 auto; /* Centra horizontalmente la galería. */
+    padding: 20px; /* Espaciado interno de 20px dentro del contenedor. */
+    display: grid; /* Activa el modelo de diseño de cuadrícula (grid). */
+    grid-template-columns: repeat(4, 1fr); /* Divide el espacio en 4 columnas iguales. */
+    gap: 10px; /* Espaciado entre las columnas y filas de la cuadrícula. */
+    }
+    .grib2 {
+    position: relative; /* Permite posicionar elementos hijos de forma relativa. */
+    overflow: hidden; /* Oculta cualquier contenido que desborde del contenedor. */
+    border-radius: 8px; /* Bordes redondeados con un radio de 8px. */
+    border: 5px solid rgb(255, 196, 0); /* Borde amarillo de 5px de ancho. */
+    transition: transform 0.3s ease; /* Suaviza los cambios en transform en 0.3 segundos. */
+    }
+    .grib2:hover {
+    transform: scale(1.05); /* Agranda ligeramente el contenedor al pasar el mouse. */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Agrega una sombra para dar efecto de elevación. */
+    }
+    .grib2 img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor. */
+    height: auto; /* Mantiene la proporción original de la imagen. */
+    object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor. */
+    display: block; /* Elimina el espacio extra bajo las imágenes en elementos inline. */
+    }
+    .grib2 h1 {
+    position: absolute; /* Posiciona el texto relativo al contenedor. */
+    top: 50%; /* Centra verticalmente el texto en el contenedor. */
+    left: 50%; /* Centra horizontalmente el texto en el contenedor. */
+    transform: translate(-50%, -50%); /* Ajusta para que el punto de referencia sea el centro. */
+    color: white; /* Color del texto en blanco. */
+    text-align: center; /* Alinea el texto al centro. */
+    font-size: 1.5rem; /* Tamaño de fuente de 1.5rem. */
+    padding: 10px; /* Espaciado interno de 10px alrededor del texto. */
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente detrás del texto. */
+    width: 100%; /* El texto ocupa todo el ancho del contenedor. */
+    margin: 0; /* Elimina el margen externo del texto. */
+    opacity: 0; /* Hace invisible el texto inicialmente. */
+    ~ 5 ~
+    transition: opacity 0.3s ease; /* Suaviza los cambios de opacidad en 0.3 segundos.*/
+    }
+    .grib2:hover h1 {
+    opacity: 1; /* Muestra el texto al pasar el mouse sobre el contenedor. */
+    }
+    /* Responsive */
+    @media (max-width: 1024px) {
+    .container2 {
+    grid-template-columns: repeat(4, 1fr); /* Mantiene 4 columnas para pantallas medianas. */
+    }
+    }
+    @media (max-width: 768px) {
+    .container2 {
+    grid-template-columns: repeat(2, 1fr); /* Reduce a 2 columnas para pantallas pequeñas. */
+    }
+    }
+    @media (max-width: 480px) {
+    .container2 {
+    grid-template-columns: 2fr; /* Ajusta a una sola columna más amplia en móviles.*/
+    }
+    } 
